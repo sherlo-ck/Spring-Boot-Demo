@@ -1,6 +1,8 @@
  server:
   port: 8080
  spring:
+  elasticsearch:
+    uris: http://localhost:9200
   datasource:
      username: root
      password: 123456
@@ -13,5 +15,24 @@
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
+    lettuce:
+      pool:
+        max-idle: 16
+        max-active: 32
+        min-idle: 8
 
+ del:
+   file:
+     quartz:
+       cron: "0/5 * * * * ?" # 每小时执行一次
 
+ restTemplate:
+   post:
+     url: "http://119.23.80.65/jscp-api/jscp-new-visit/mobileVisit/submitBookOrInviteInfo"
+ test:
+   testValue: "qwer1234"

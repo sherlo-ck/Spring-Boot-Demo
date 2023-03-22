@@ -3,6 +3,10 @@
 <mapper namespace="org.sherlock.mapper.SpringBootDemoMapper">
 
     <select id="selectAll" resultType="org.sherlock.model.User">
-        SELECT username FROM t_user
+        SELECT id, name, age, sex FROM user
+    </select>
+
+    <select id="selectOne" resultType="org.sherlock.model.User">
+        SELECT id, name, age, sex FROM user where id = ${id}
     </select>
 </mapper>

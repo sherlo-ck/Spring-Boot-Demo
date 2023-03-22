@@ -1,6 +1,15 @@
 package org.sherlock.service;
 
+import com.alibaba.fastjson.JSONObject;
+import org.sherlock.model.User;
+
+import java.util.List;
+
 public interface SpringBootDemoService {
 
-    String getString();
+    List<User> getString();
+
+    List<User> getOne(Integer id);
+
+    void testSerializable(User user);
 }
