@@ -36,3 +36,4 @@
      url: "http://119.23.80.65/jscp-api/jscp-new-visit/mobileVisit/submitBookOrInviteInfo"
  test:
    testValue: "qwer1234"
+   url: "http://127.0.0.1:8080/springBoot/test"

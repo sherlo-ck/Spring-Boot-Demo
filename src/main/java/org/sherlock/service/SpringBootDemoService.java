@@ -11,5 +11,5 @@ public interface SpringBootDemoService {
 
     List<User> getOne(Integer id);
 
-    void testSerializable(User user);
+    void test();
 }

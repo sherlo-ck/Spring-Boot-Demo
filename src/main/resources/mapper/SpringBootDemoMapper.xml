@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.sherlock.mapper.SpringBootDemoMapper">
+    <update id="update">
+        update user set sex =
+        <choose>
+            <when test="list1">
+                50
+            </when>
+            <when test="list2">
+                60
+            </when>
+        </choose>
+        WHERE sex IN
+        <foreach collection="list1" item="value1" open="(" close=")" separator=",">
+            #{value1.id}
+        </foreach>
+        AND sex IN
+        <foreach collection="list2" item="value2" open="(" close=")" separator=",">
+            #{value2.id}
+        </foreach>
+    </update>
 
     <select id="selectAll" resultType="org.sherlock.model.User">
         SELECT id, name, age, sex FROM user
@@ -8,5 +27,9 @@
 
     <select id="selectOne" resultType="org.sherlock.model.User">
         SELECT id, name, age, sex FROM user where id = ${id}
+    </select>
+
+    <select id="query" resultType="org.sherlock.model.User">
+        SELECT * from user u where u.age = '22' OR u.age = '23'
     </select>
 </mapper>
