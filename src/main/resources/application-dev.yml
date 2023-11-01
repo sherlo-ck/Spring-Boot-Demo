@@ -7,7 +7,7 @@
      username: root
      password: 123456
      url: jdbc:mysql:///springbootdemo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-     driver-class-name: com.mysql.jdbc.Driver
+     driver-class-name: com.mysql.cj.jdbc.Driver
      type: com.alibaba.druid.pool.DruidDataSource
   mybatis:
      type-aliases-package: org.sherlock.User" #别名

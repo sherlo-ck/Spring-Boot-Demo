@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.models.auth.In;
 import lombok.Data;
 
+import javax.swing.plaf.PanelUI;
 import java.io.Serializable;
 
 @Data
@@ -27,4 +28,8 @@ public class User implements Serializable {
         this.id = id;
     }
     public User() {}
+
+    public String StringValue() {
+        return String.valueOf(this.id);
+    }
 }

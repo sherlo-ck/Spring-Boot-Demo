@@ -31,15 +31,7 @@ public class SpringBootDemoServiceImpl implements SpringBootDemoService {
 
     @Override
     public List<User> getString() {
-        List<User> users = springBootDemoMapper.selectAll();
-        Iterator<User> iterator = users.iterator();
-        while (iterator.hasNext()) {
-            User user = iterator.next();
-            if (user.getId().equals(1)) {
-                iterator.remove();
-            }
-        }
-        return users;
+        return springBootDemoMapper.selectAll();
     }
 
     @Override
